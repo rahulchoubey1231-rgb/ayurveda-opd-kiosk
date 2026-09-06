@@ -176,6 +176,7 @@ export interface MedicalTimelineEntry {
   storage_path?: string;
   raw_ocr_snippet?: string;
   uploaded_at?: string;
+  fileUrl?: string;
 }
 
 export interface AyurvedaPariksha {
