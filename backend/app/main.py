@@ -94,6 +94,9 @@ app.include_router(doctor_router, prefix="/api/doctor", tags=["Doctor Dashboard 
 from app.api.ocr_routes import router as ocr_router
 app.include_router(ocr_router, prefix="/api/ocr", tags=["Local OCR Scanning"])
 
+from app.api.triage import router as triage_router
+app.include_router(triage_router, prefix="/api/triage", tags=["AI Triage Chat Bypass"])
+
 # Dedicated Root Endpoint for /generate-clinical-summary
 @app.post("/generate-clinical-summary", response_model=ClinicalSummary, tags=["Doctor Dashboard & SOAP Triage"])
 async def generate_clinical_summary_root(request: GenerateClinicalSummaryRequest) -> ClinicalSummary:
